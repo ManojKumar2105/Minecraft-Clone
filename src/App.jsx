@@ -6,6 +6,7 @@ import Player from './components/Player.jsx'
 import FPV from './components/FPV.jsx'
 import Cubes from './components/Cubes.jsx'
 import TextureSelector from './components/TextureSelector.jsx'
+import MobileControls from './components/MobileControls.jsx'
 import Menu from './components/Menu.jsx'
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
       +
       </div>
       <TextureSelector />
+      <MobileControls />
       <Menu />
 
   </div>
