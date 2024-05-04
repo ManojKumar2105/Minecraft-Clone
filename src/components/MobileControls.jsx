@@ -17,7 +17,7 @@ const [setTexture, setActions] = useGame((state) => [state.setTexture, state.set
       </div>
       <div className ="absolute bottom-8 left-4">
           <div className='flex flex-col gap-3 justify-center flex-1 items-center'>
-              <button className='inline-block grow select-none hover:bg-gray-600 bg-gray-400 sm:p-0 md:p-4 lg:hidden xl:hidden 2xl:hidden text-xl font-semibold rounded-full w-fit'
+              <button className='inline-block grow select-none hover:bg-gray-600 bg-gray-400 p-3 lg:hidden xl:hidden 2xl:hidden text-4xl font-semibold rounded-full w-fit'
                onTouchStart={() => {
                 const boolValue = true
                 setActions("moveForward",boolValue)
@@ -29,7 +29,7 @@ const [setTexture, setActions] = useGame((state) => [state.setTexture, state.set
               
               >↑</button>
                 <div className='flex flex-row gap-3 flex-1'>
-                  <button className='select-none bg-gray-400 sm:p-0 md:p-4 lg:hidden xl:hidden 2xl:hidden text-xl font-semibold rounded-full'
+                  <button className='select-none bg-gray-400 p-3 lg:hidden xl:hidden 2xl:hidden text-4xl font-semibold rounded-full'
                   onTouchStart={() => {
                     const boolValue = true
                     setActions("moveLeftward",boolValue)
@@ -39,7 +39,7 @@ const [setTexture, setActions] = useGame((state) => [state.setTexture, state.set
                     setActions("moveLeftward",boolValue)
                   }}
                   >←</button>
-                  <button className='select-none bg-gray-400 grow sm:p-0 md:p-4 lg:hidden xl:hidden 2xl:hidden text-xl font-semibold rounded-full'
+                  <button className='select-none bg-gray-400 grow p-3 lg:hidden xl:hidden 2xl:hidden text-4xl font-semibold rounded-full'
                     onTouchStart={() => {
                      const boolValue = true
                      setActions("moveBackward",boolValue)
@@ -49,7 +49,7 @@ const [setTexture, setActions] = useGame((state) => [state.setTexture, state.set
                      setActions("moveBackward",boolValue)
                    }}
                   >↓</button>
-                  <button className='select-none bg-gray-400 sm:p-0 md:p-4 lg:hidden xl:hidden 2xl:hidden text-xl font-semibold rounded-full'
+                  <button className='select-none bg-gray-400 p-3 lg:hidden xl:hidden 2xl:hidden text-4xl font-semibold rounded-full'
                     onTouchStart={() => {
                       const boolValue = true
                       setActions("moveRightward",boolValue)
@@ -64,7 +64,7 @@ const [setTexture, setActions] = useGame((state) => [state.setTexture, state.set
       </div>
       
       <div className='absolute right-4 bottom-8'>
-            <div className='select-none bg-gray-400 sm:p-6 md:p-10 lg:hidden xl:hidden 2xl:hidden rounded-full'
+            <div className='select-none bg-gray-400 p-4 lg:hidden xl:hidden 2xl:hidden rounded-full'
                 onTouchStart={(e) => {
                 const boolValue = true
                 setActions("jump",boolValue)
