@@ -3,7 +3,7 @@ import * as textures from '../assets/images/textures.js'
 import useGame from "../hooks/useGame.js"
 import {useState} from "react"
 
-const Cube = ({cubeData, key}) => {
+const Cube = ({cubeData}) => {
     const [ref] = useBox(() => ({
         position:cubeData.pos,
         type:"static"
