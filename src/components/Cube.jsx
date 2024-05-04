@@ -3,7 +3,7 @@ import * as textures from '../assets/images/textures.js'
 import useGame from "../hooks/useGame.js"
 import {useState} from "react"
 
-const Cube = ({cubeData}) => {
+const Cube = ({cubeData, key}) => {
     const [ref] = useBox(() => ({
         position:cubeData.pos,
         type:"static"
@@ -17,7 +17,7 @@ const Cube = ({cubeData}) => {
                     const {x,y,z} = ref.current.position
                     const clickedFace = Math.floor(e.faceIndex / 2)
                     if(e.altKey){
-                      removeCubes(x,y,z)
+                      removeCubes(cubeData.key)
                     }
                     else if (clickedFace == 0) addCubes(x + 1, y , z)
                     else if (clickedFace == 1) addCubes(x - 1, y , z)
@@ -32,7 +32,7 @@ const Cube = ({cubeData}) => {
     //   removeCubes(x,y,z)}}
       >
       <boxGeometry />
-      <meshStandardMaterial color={isHovered ? "grey" : "white"} transparent={texture == "glass" ? true : false}  opacity={texture == "glass" ? 0.5 : 1 } map={activeTexture} />
+      <meshStandardMaterial color={isHovered ? "grey" : "white"} transparent={true}  opacity={cubeData.texture == "glass" ? 0.5 : 1 } map={activeTexture} />
     </mesh>
 }
 

@@ -3,11 +3,23 @@ import { nanoid } from "nanoid"
 import {create} from "zustand"
 
 const getLocalStorage = (key) => JSON.parse(window.localStorage.getItem(key))    
-const setLocalStorage = (key,value) => window.localStorage.setItem(key,JSON.stringify(value))    
+const setLocalStorage = (key,value) => {window.localStorage.setItem(key,JSON.stringify(value))}    
 const useGame = create((set) => (
 {
     texture:"dirt",
     cubes: getLocalStorage("cubes") || [],
+    actions: ({
+        moveForward:false,
+        moveBackward:false,
+        moveLeftward:false,
+        moveRightward:false,
+        jump:false,
+        texture1:false,
+        texture2:false,
+        texture3:false,
+        texture4:false,
+        texture5:false
+    }),
     addCubes:(x,y,z) => {
         set((prev) => ({
             cubes:[
@@ -20,14 +32,23 @@ const useGame = create((set) => (
             ]
         }))
     },
-    removeCubes:(x,y,z) => { set((prev) => ({
+    removeCubes:(key) => { set((prev) => ({
         
+        // cubes:prev.cubes.filter(cube=> {
+        //     const [X,Y,Z] = cube.pos
+        //     return X!==x || Y!==y || Z!==z
+        // })
         cubes:prev.cubes.filter(cube=> {
-            const [X,Y,Z] = cube.pos
-            return X!==x || Y!==y || Z!==z
+           return cube.key != key
         })
     }))},
     setTexture:(texture) => {set(() => ({texture}) )},
+    setActions:(action, boolValue) => {set((prev) => ({
+           actions:{ 
+                ...prev.actions,
+                [action]:boolValue
+            }
+        }))},
     saveWorld:() => {set((prev) => 
         setLocalStorage("cubes",prev.cubes)
     )},

@@ -14,6 +14,20 @@ const [setTexture] = useGame((state) => [state.setTexture])
               <option value="grass">Grass</option>
           </select>
       </div>
+      <div className ="absolute bottom-8 left-4">
+          <div className='flex flex-col gap-3 justify-center flex-1 items-center'>
+              <div className='inline-block grow bg-gray-400 p-6 lg:hidden xl:hidden 2xl:hidden text-4xl rounded-full w-fit '>↑</div>
+                <div className='flex flex-row gap-3 flex-1'>
+                  <div className='bg-gray-400 p-6 lg:hidden xl:hidden 2xl:hidden text-4xl rounded-full'>←</div>
+                  <div className='bg-gray-400 grow p-6 lg:hidden xl:hidden 2xl:hidden text-4xl rounded-full'>↓</div>
+                  <div className='bg-gray-400 p-6 lg:hidden xl:hidden 2xl:hidden text-4xl rounded-full'>→</div>
+                </div>
+          </div>
+      </div>
+      
+      <div className='absolute right-4 bottom-8'>
+            <div className='bg-gray-400 p-12 lg:hidden xl:hidden 2xl:hidden rounded-full'>JUMP</div>
+          </div>
   </div>
   )
 }
