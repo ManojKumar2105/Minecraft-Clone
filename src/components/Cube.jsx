@@ -9,7 +9,7 @@ const Cube = ({cubeData}) => {
         type:"static"
     }))
     const [isHovered, setIsHovered] = useState(false)
-    const [addCubes, removeCubes, texture] = useGame((state) => [state.addCubes, state.removeCubes, state.texture])
+    const [addCubes, removeCubes] = useGame((state) => [state.addCubes, state.removeCubes])
     const activeTexture = textures[cubeData.texture+`Texture`]
     return <mesh ref={ref}
                  onClick={(e) => {
@@ -28,8 +28,6 @@ const Cube = ({cubeData}) => {
                 }}
                 onPointerMove={() => setIsHovered(true)}
                 onPointerOut={() => setIsHovered(false)}
-    //   onDoubleClick={() => {const {x,y,z} = ref.current.position;
-    //   removeCubes(x,y,z)}}
       >
       <boxGeometry />
       <meshStandardMaterial color={isHovered ? "grey" : "white"} transparent={true}  opacity={cubeData.texture == "glass" ? 0.5 : 1 } map={activeTexture} />
