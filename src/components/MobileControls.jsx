@@ -6,7 +6,7 @@ const [setTexture, setActions] = useGame((state) => [state.setTexture, state.set
 
   return (
     <div>
-      <div className="absolute top-8 right-4">
+      <div className="absolute top-3 right-4">
           <select className="bg-gray-600 lg:hidden xl:hidden 2xl:hidden rounded-xl p-3 text-white text-1xl font-semibold" onChange={(e) => setTexture(e.target.value)}>
               <option value="dirt">Dirt</option>
               <option value="wood">Wood</option>
